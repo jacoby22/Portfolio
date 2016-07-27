@@ -1,3 +1,7 @@
+header {
+
+}
+
 a {
   text-decoration: none;
 }
@@ -7,6 +11,49 @@ li {
   display: inline;
 }
 
-div {
-  height: 20px;
+footer {
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+.icon-menu {
+  font-size: 3em;
+  /*float: right;*/
+}
+
+#navLinks {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2em;
+}
+
+#myContainer {
+  display: flex;
+  justify-content: center;
+  height: 10rem;
+}
+
+#me {
+  border-radius: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#traits {
+  text-align: center;
+}
+
+#myName {
+  text-align: center;
+}
+
+#about {
+  text-align: center;
+}
+
+#interests li {
+  display: block;
 }
