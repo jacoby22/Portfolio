@@ -8,14 +8,17 @@
   </head>
   <body>
     <header class="site-header">
-      <h1>
+      <div id="myContainer">
+        <img src="images/me.jpg" id="me">
+      </div>
+      <h1 id="myName">
         Nick Jacoby
       </h1>
-      <p>Full Stack (Almost) | JavaScript | Web Developer</p>
+      <p id="traits">Full Stack (Almost) | JavaScript | Web Developer</p>
     </header>
     <nav class="main-nav">
-      <ul>
-        <div class="icon-menu"></div>
+      <div class="icon-menu"></div>
+      <ul id="navLinks">
         <li class="tab" data-content="articles"><a href="#"> Home</a></li>
         <li class="tab" data-content="about"><a href="#"> About</a></li>
         <li><a href="http://www.facebook.com" target="_blank"> Facebook</a></li>
@@ -37,12 +40,12 @@
         </article>
       </section>
       <section id="about" class="tab-content">
-        <header>
-          Life outside of the stack:
-        </header>
+        <h1>
+          Life outside of the stack
+        </h1>
         <section>
-          <h1>Some of my interests:</h1>
-          <ul>
+          <h1>Some of my interests</h1>
+          <ul id="interests">
             <li>Coding</li>
             <li>Traveling</li>
             <li>Sports</li>
@@ -52,7 +55,7 @@
       </section>
     </main>
     <footer>
-      &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
+      &copy; 2016 Nick Jacoby | Web Developer
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
