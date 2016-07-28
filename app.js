@@ -1,4 +1,5 @@
 var articles = [];
+var portfolio = {};
 
 function Article (opts) {
   this.author = opts.author;
@@ -28,6 +29,14 @@ Article.prototype.toHtml = function() {
   return $newArticle;
 };
 
+portfolio.selectNav = function() {
+  $('.main-nav').on('click', '.tab', function() {
+    var $selectedTab = $(this).data('content');
+    $('.tab-content').hide();
+    $('#' + $selectedTab).fadeIn(750);
+  });
+};
+
 projects.sort(function(a,b) {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
@@ -37,5 +46,12 @@ projects.forEach(function(ele) {
 });
 
 articles.forEach(function(a){
-  $('#articles').append(a.toHtml());
+  $('#projects').append(a.toHtml());
+});
+
+portfolio.selectNav();
+
+$(function() {
+  $('.tab-content').hide();
+  $('#projects').fadeIn(750);
 });
