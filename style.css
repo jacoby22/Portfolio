@@ -8,7 +8,6 @@ a {
 
 li {
   list-style: none;
-  display: inline;
 }
 
 footer {
@@ -21,7 +20,17 @@ ul {
 
 .icon-menu {
   font-size: 3em;
-  /*float: right;*/
+  display: none;
+}
+
+.tab {
+  list-style: none;
+  display: inline;
+}
+
+.contactLink {
+  display: flex;
+  justify-content: center;
 }
 
 #navLinks {
