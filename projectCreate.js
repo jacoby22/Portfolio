@@ -17,6 +17,40 @@ articlesCreated.populateFilters = function() {
   });
 };
 
+articlesCreated.handleAuthorChange = function() {
+  $('#author-filter').on('change', function() {
+    var val = $(this).val();
+    if (val) {
+      var $author = val;
+      console.log($author);
+      $('article').hide();
+      $('article[data-author="' + $author + '"]').show();
+    } else {
+      $('article').show();
+      $('.template').hide();
+    }
+    $('#category-filter').val('');
+  });
+};
+
+articlesCreated.handleCategoryChange = function() {
+  $('#category-filter').on('change', function() {
+    var val = $(this).val();
+    if (val) {
+      var $category = val;
+      console.log($category);
+      $('article').hide();
+      $('article[data-category="' + $category + '"]').show();
+    } else {
+      $('article').show();
+      $('.template').hide();
+    }
+    $('#author-filter').val('');
+  });
+};
+
 $(function() {
   articlesCreated.populateFilters();
+  articlesCreated.handleAuthorChange();
+  articlesCreated.handleCategoryChange();
 });
