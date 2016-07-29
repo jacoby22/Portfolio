@@ -13,9 +13,7 @@ function Article (opts) {
 Article.prototype.toHtml = function() {
   var $newArticle = $('article.template').clone();
   $newArticle.removeClass('template');
-  if (!this.publishedOn) {
-    $newArticle.addClass('draft');
-  }
+  $newArticle.addClass('draft');
   $newArticle.attr('data-category', this.category);
   $newArticle.attr('data-author', this.author);
   $newArticle.find('.byline a').html(this.author);
@@ -49,9 +47,10 @@ articles.forEach(function(a){
   $('#projects').append(a.toHtml());
 });
 
-portfolio.selectNav();
 
 $(function() {
   $('.tab-content').hide();
   $('#projects').fadeIn(750);
+  portfolio.selectNav();
+  $('.template').hide();
 });
