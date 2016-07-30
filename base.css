@@ -1,0 +1,23 @@
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+footer {
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+address a {
+  display: inline;
+}
+
+time {
+  display: inline;
+}
