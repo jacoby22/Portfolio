@@ -1,3 +1,11 @@
+.tab:hover {
+  color: red;
+}
+
+#filters {
+  padding: 0;
+}
+
 #authorLink {
   margin-left: .25em;
   margin-right: .25em;
@@ -22,6 +30,30 @@
   text-align: center;
 }
 
+#interests {
+  text-align: center;
+  padding: 0;
+}
+
 #interests li {
   display: block;
 }
+
+@media only screen and (min-width: 680px) {
+  #navLinks {
+      margin: 1%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 2em;
+      padding: 0;
+    }
+
+  .icon-menu {
+    display: none;
+    }
+
+  .tab {
+    display: block;
+    padding: 0;
+    }
+  }

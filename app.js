@@ -21,6 +21,13 @@ Article.prototype.toHtml = function() {
   $('#projects').append(html);
 };
 
+portfolio.displayNav = function() {
+  $('.icon-menu').on('click', function() {
+    $(this).hide();
+    $('.tab').show();
+  });
+};
+
 portfolio.selectNav = function() {
   $('.main-nav').on('click', '.tab', function() {
     var $selectedTab = $(this).data('content');
@@ -45,6 +52,7 @@ articles.forEach(function(a){
 $(function() {
   $('.tab-content').hide();
   $('#projects').fadeIn(750);
+  portfolio.displayNav();
   portfolio.selectNav();
   $('.template').hide();
 });

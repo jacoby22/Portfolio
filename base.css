@@ -1,17 +1,33 @@
+html {
+  max-width: 2000px;
+}
+
+body {
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
 a {
   text-decoration: none;
 }
 
+ul {
+  width: 100%;
+}
+
 li {
   list-style: none;
+  padding-right: 2%;
 }
 
 footer {
   text-align: center;
-}
-
-ul {
-  padding: 0;
 }
 
 address a {
@@ -20,4 +36,10 @@ address a {
 
 time {
   display: inline;
+}
+
+span {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: black;
 }
