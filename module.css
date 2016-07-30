@@ -1,3 +1,13 @@
+.tab:hover {
+  color: rgba(255, 0, 13, 0.6);
+}
+
+#filters {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
 #authorLink {
   margin-left: .25em;
   margin-right: .25em;
@@ -5,7 +15,7 @@
 
 #me {
   border-radius: 100%;
-  border: solid black 4px;
+  border: solid white 4px;
   height: 100%;
   margin: 0 auto;
 }
@@ -22,6 +32,39 @@
   text-align: center;
 }
 
+#interests {
+  text-align: center;
+  padding: 0;
+}
+
 #interests li {
   display: block;
 }
+
+@media only screen and (min-width: 680px) {
+  hr {
+    display: block;
+    }
+
+  .main-nav {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .icon-menu {
+    display: none;
+    }
+
+  .tab {
+    display: block;
+    padding: 0;
+    }
+
+  #navLinks {
+      margin: 1%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.5em;
+      padding: 0;
+    }
+  }
