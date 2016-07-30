@@ -1,0 +1,30 @@
+.icon-menu {
+  font-size: 3em;
+  display: none;
+}
+
+.tab {
+  list-style: none;
+  display: inline;
+}
+
+.contactLink {
+  display: flex;
+  justify-content: center;
+}
+
+.byLine {
+  display: flex;
+}
+
+#navLinks {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2em;
+}
+
+#myContainer {
+  display: flex;
+  justify-content: center;
+  height: 10rem;
+}

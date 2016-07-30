@@ -3,8 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Nick Jacoby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="icons.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="module.css">
+
+    <script id="article-template" type="text/x-handlebars-template">
+      <article data-category="{{category}}" data-author="{{author}}">
+        <h1>{{title}}</h1>
+        <div class="byLine">
+          By <address id="authorLink"><a href="">{{author}} </a></address>
+          <time pubdate datetime="2000-01-01">{{publishStatus}}</time>
+        </div>
+      <section class="article-body">{{{body}}}</section>
+      <!-- <a href="#" class="read-on">Read-on &rarr;</a> -->
+      <hr/>
+      </article>
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -47,17 +64,6 @@
             </li>
           </ul>
         </div>
-        <article class="template" data-category="cat">
-          <header>
-            <h1>My awesome projects</h1>
-            <div class="byline">
-              By <address><a href="">Author Name</a></address>
-              published <time pubdate datetime="2000-01-01">Publish Time</time>
-            </div>
-          </header>
-          <section class="article-body"></section>
-          <a href="#" class="read-on">Read on &rarr;</a>
-        </article>
       </section>
       <section id="about" class="tab-content">
         <h1>
@@ -77,7 +83,7 @@
     <footer>
       &copy; 2016 Nick Jacoby | Web Developer
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="projects.js"></script>
     <script src="projectCreate.js"></script>
