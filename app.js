@@ -23,8 +23,16 @@ Article.prototype.toHtml = function() {
 
 portfolio.displayNav = function() {
   $('.icon-menu').on('click', function() {
-    $(this).hide();
-    $('.tab').show();
+    $('.tab').toggle();
+  });
+};
+
+portfolio.displayNavOnScreenChange = function() {
+  $(window).resize(function() {
+    var $winSize = $(window).width();
+    if ($winSize > 679) {
+      $('.tab').show();
+    }
   });
 };
 
@@ -54,5 +62,6 @@ $(function() {
   $('#projects').fadeIn(750);
   portfolio.displayNav();
   portfolio.selectNav();
+  portfolio.displayNavOnScreenChange();
   $('.template').hide();
 });

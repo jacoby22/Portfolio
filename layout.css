@@ -1,6 +1,6 @@
 .icon-menu {
-  font-size: 3em;
   text-align: center;
+  font-size: 2em;
 }
 
 .icon-menu:hover {
@@ -32,9 +32,13 @@
   padding: 0%;
 }
 
+.site-header {
+  padding-top: 2%;
+}
+
 #navLinks {
   text-align: center;
-  padding: 0;
+  padding-left: 0;
 }
 
 #myContainer {
