@@ -21,6 +21,8 @@ Article.prototype.toHtml = function() {
   $('#projects').append(html);
 };
 
+Article.all = [];
+
 portfolio.displayNav = function() {
   $('.icon-menu').on('click', function() {
     $('.tab').toggle();
@@ -44,17 +46,41 @@ portfolio.selectNav = function() {
   });
 };
 
-projects.sort(function(a,b) {
-  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+portfolio.loadAll = function(projects) {
+  projects.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
+  projects.forEach(function(ele) {
+    articles.push(new Article(ele));
+  });
 
-projects.forEach(function(ele) {
-  articles.push(new Article(ele));
-});
+  articles.forEach(function(a){
+    $('#projects').append(a.toHtml());
+  });
+};
 
-articles.forEach(function(a){
-  $('#projects').append(a.toHtml());
-});
+portfolio.fetchAll = function() {
+  console.log('Hellos');
+  if (localStorage.projects) {
+    console.log('1');
+    portfolio.loadAll(JSON.parse(localStorage.projects));
+  } else {
+    console.log('2');
+    var $data = $.get('projects.json', function(data) {
+      console.log(data);
+      return data;
+    });
+    $data.done(function(data) {
+      console.log('3');
+      portfolio.loadAll(data);
+    });
+    $data.done(function(data) {
+      console.log('4');
+      localStorage.setItem('projects', JSON.stringify(($data.responseText)));
+    });
+    ;
+  }
+};
 
 
 $(function() {
@@ -63,5 +89,6 @@ $(function() {
   portfolio.displayNav();
   portfolio.selectNav();
   portfolio.displayNavOnScreenChange();
+  portfolio.fetchAll();
   $('.template').hide();
 });
