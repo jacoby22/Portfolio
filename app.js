@@ -66,19 +66,15 @@ portfolio.fetchAll = function() {
     portfolio.loadAll(JSON.parse(localStorage.projects));
   } else {
     console.log('2');
-    var $data = $.get('projects.json', function(data) {
+    $.get('projects.json', function(data) {
       console.log(data);
       return data;
-    });
-    $data.done(function(data) {
+    }).done(function(data) {
       console.log('3');
+      localStorage.setItem('projects', JSON.stringify((data)));
       portfolio.loadAll(data);
-    });
-    $data.done(function(data) {
       console.log('4');
-      localStorage.setItem('projects', JSON.stringify(($data.responseText)));
     });
-    ;
   }
 };
 
