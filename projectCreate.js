@@ -46,7 +46,6 @@ articlesCreated.handleCategoryChange = function() {
 };
 
 $(function() {
-  articlesCreated.populateFilters();
   articlesCreated.handleAuthorChange();
   articlesCreated.handleCategoryChange();
 });
