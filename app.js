@@ -19,6 +19,7 @@ Article.prototype.toHtml = function() {
 
   var html = template(this);
   $('#projects').append(html);
+  Article.all.push(this);
 };
 
 Article.all = [];
@@ -60,20 +61,16 @@ portfolio.loadAll = function(projects) {
 };
 
 portfolio.fetchAll = function() {
-  console.log('Hellos');
   if (localStorage.projects) {
-    console.log('1');
     portfolio.loadAll(JSON.parse(localStorage.projects));
+    articlesCreated.populateFilters();
   } else {
-    console.log('2');
     $.get('projects.json', function(data) {
-      console.log(data);
       return data;
     }).done(function(data) {
-      console.log('3');
       localStorage.setItem('projects', JSON.stringify((data)));
       portfolio.loadAll(data);
-      console.log('4');
+      articlesCreated.populateFilters();
     });
   }
 };
