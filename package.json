@@ -1,0 +1,19 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio MVC Implementation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Nick Jacoby",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-request-proxy": "^1.0.10"
+  },
+  "keywords": [],
+  "devDependencies": {}
+}
