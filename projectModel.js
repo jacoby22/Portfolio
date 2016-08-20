@@ -63,7 +63,7 @@
     if (localStorage.projects) {
       portfolio.loadAll(JSON.parse(localStorage.projects));
       articlesCreated.populateFilters();
-      portfolio.printTotalHours();
+      // portfolio.printTotalHours();
     } else {
       $.get('projects.json', function(data) {
         return data;
@@ -71,7 +71,6 @@
         localStorage.setItem('projects', JSON.stringify((data)));
         portfolio.loadAll(data);
         articlesCreated.populateFilters();
-        portfolio.reduceHours();
         // portfolio.printTotalHours();
       });
     }
@@ -99,17 +98,6 @@
     portfolio.fetchAll();
     $('.template').hide();
   };
-
-
-  $(function() {
-    $('.tab-content').hide();
-    $('#projects').fadeIn(750);
-    portfolio.displayNav();
-    portfolio.selectNav();
-    portfolio.displayNavOnScreenChange();
-    portfolio.fetchAll();
-    $('.template').hide();
-  });
 
   module.portfolio = portfolio;
   module.Project = Project;
