@@ -1,7 +1,7 @@
 (function(module) {
   var repos = {};
 
-  repos.reqRepos = function() {
+  repos.reqRepos = function(callback) {
     $.ajax({
       url: 'https://api.github.com/user/repos?sort=updated&per_page=15',
       type: 'GET',
@@ -10,7 +10,7 @@
       }
     }).done(function(data) {
       console.log(data);
-      repos.writeContent(data);
+      callback(data);
     });
   };
 
