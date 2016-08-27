@@ -2,6 +2,7 @@
   var projectController = {};
 
   portfolio.showIndex();
+  repos.reqRepos();
 
   projectController.index = function() {
     portfolio.selectNav();
