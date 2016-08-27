@@ -2,14 +2,7 @@
   var repos = {};
 
   repos.reqRepos = function(callback) {
-    $.ajax({
-      url: 'https://api.github.com/user/repos?sort=updated&per_page=15',
-      type: 'GET',
-      headers: {
-        Authorization: 'token ' + gitKey
-      }
-    }).done(function(data) {
-      console.log(data);
+    $.get('/github/users/jacoby22/repos?sort=updated&per_page=15', function(data) {
       callback(data);
     });
   };
