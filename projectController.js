@@ -4,8 +4,8 @@
   portfolio.showIndex();
   repos.reqRepos(repos.writeContent);
 
-  projectController.index = function() {
-    portfolio.selectNav();
+  projectController.index = function(ctx, next) {
+    next();
   };
 
   projectController.error = function() {
