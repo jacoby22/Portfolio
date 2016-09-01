@@ -1,8 +1,8 @@
 (function(module) {
   var aboutController = {};
 
-  aboutController.index = function() {
-    portfolio.selectNav();
+  aboutController.index = function(ctx, next) {
+    next();
   };
 
   module.aboutController = aboutController;

@@ -63,7 +63,6 @@
     if (localStorage.projects) {
       portfolio.loadAll(JSON.parse(localStorage.projects));
       articlesCreated.populateFilters();
-      // portfolio.printTotalHours();
     } else {
       $.get('projects.json', function(data) {
         return data;
@@ -71,7 +70,6 @@
         localStorage.setItem('projects', JSON.stringify((data)));
         portfolio.loadAll(data);
         articlesCreated.populateFilters();
-        // portfolio.printTotalHours();
       });
     }
   };
@@ -84,10 +82,6 @@
       return acc + b;
     }, 0);
   };
-
-  // portfolio.printTotalHours = function() {
-  //   $('#totalHours').append(portfolio.reduceHours() + ' hours');
-  // };
 
   portfolio.showIndex = function() {
     $('.tab-content').hide();

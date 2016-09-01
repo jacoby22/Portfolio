@@ -1,8 +1,8 @@
 (function(module) {
   var resumeController = {};
 
-  resumeController.index = function() {
-    portfolio.selectNav();
+  resumeController.index = function(ctx, next) {
+    next();
   };
 
   module.resumeController = resumeController;
